@@ -1,0 +1,38 @@
+.ks-hook-wrap{
+    border: 1px solid #21759B;
+    display: block;
+    margin: 5px 2px;
+    overflow: hidden;
+    padding: 5px;
+    position: relative;
+}
+
+.ks-thematic-hook {
+	background: #fff;
+	color: #21759B;
+	display: block;
+	padding: 2px;
+	margin: 5px;
+	font-size: 12px;
+
+}
+
+#wrap_container {
+	float: left;
+	width: 620px;
+}
+
+#wrap_sidebar {
+    float: right;
+   	width: 338px;
+}
+
+.thematic_abovemainclose_wrap {
+	float:left;
+	clear: both;
+	width: 98%;
+}
+
+.thematic_header_wrap {
+	overflow: visible;
+}
