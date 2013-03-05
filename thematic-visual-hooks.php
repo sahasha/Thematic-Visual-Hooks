@@ -2,31 +2,44 @@
 /*
 PLUGIN NAME: Thematic Visual Hooks
 PLUGIN URI: 
-
 DESCRIPTION: Highlight and label the action hooks for the Thematic Theme Framework.
-
 VERSION: 0.1
-
 Author: emhr
 Author URI:
-
 LICENSE: GPLv2
-LICENSE URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+LICENSE URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Copyright (C) 2012 Gene Robinson
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
 */
 
 
-class KS_thematic_actions {
+class ks_thematic_actions {
 
 	/**
 	 * @var array list of bbPress hooks
 	 */
-	public $ks_thematic_actions = '';
+	//public $ks_thematic_actions = '';
 
 	
 	/**
 	 * __construct function.
 	 *
-	 * Hook everything
+	 * Hook everything into the WordPress Action API
 	 */
 	function __construct() {
 		add_action( 'get_header', array( $this, 'hook_loop' ) );
@@ -44,7 +57,7 @@ class KS_thematic_actions {
 	
 	
 	/**
-	 * enqueues function.
+	 * enqueue styels for the plugin.
 	 */
 	function enqueues() {
 		wp_register_style( 'ks-thematic-actions', plugin_dir_url( __FILE__ ) . 'style.css' );
@@ -185,12 +198,17 @@ class KS_thematic_actions {
 	function open_wrap() {
 	?>
 		<?php if ( current_filter() == 'thematic_abovecontainer' ) : ?>
+			
 			<div id="wrap_container">
 			
 		<?php elseif ( current_filter() == 'thematic_abovemain' ) : ?>
+		
 			<div id="wrap_main">
+			
 		<?php else: ?>
+		
 			<div id="wrap_sidebar">
+			
 		<?php endif ?>
 	
 	<?php }
@@ -209,4 +227,4 @@ class KS_thematic_actions {
 }
 
 
-new KS_thematic_actions();
+new ks_thematic_actions();
